@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variables en folie p5.js</title>
+  <link rel="shortcut icon" type="image/png" href="images/ico_full.png"/>
+  <link rel="stylesheet" href="stylesheet/prism.css">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <!-- https://images.unsplash.com/photo-1519122295308-bdb40916b529?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1568&q=80 -->
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(images/variables.jpg);">
+    <div id="class-languages">
+      <i class="fab fa-html5 mr-1" style="color: #f84820"></i>
+      <i class="fab fa-css3-alt mr-1" style="color: #1970b5"></i>
+      <i class="fab fa-js-square mr-1" style="color: #FFE01B"></i>
+    </div>
+    <div class="container">
+      <div class="main">
+        <img src="images/logo.png" alt="">
+        <div class="class-title">
+          <h1>Variables en folie...</h1>
+          <h4>intro à P5.js</h4>
+        </div>
+      </div>
+      <p>Le but de ce défi est de découvrir le message secret qui se trouve dans un code p5.js un peu loufoque... Tu en profiteras pour découvrir (ou revoir) les variables, les commentaires et les bases de la librairie p5.js</p>
+      <a class="btn btn-primary tl-button" href="#challenge" role="button">Commencer !</a>
+    </div>
+  </div>
+
+  <div class="container" id="challenge">
+
+    <div class="gamification">
+      <div class="progress">
+        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link done task" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Etape 1 - Connexion à P5.js
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>P5.js est une librairie JavaScript très chouette pour créer des animations et des jeux sur le web. P5.js a un éditeur de texte en ligne que te permet d'écrire ton code, de le tester, de le sauvegarder et de le partager d'un même endroit. Super pratique!</p>
+
+            <p>Si ce n'est pas déjà fait, crée-toi un compte sur p5.js:</p>
+            <ol>
+              <li><p>Clique sur ce lien <a href="https://editor.p5js.org/">https://editor.p5js.org/</a></p></li>
+              <li>Clique sur le lien <strong>Sign up</strong> en haut à droite de la page. Tu auras besoin d'une adresse email.</li>
+              <li>Assure-toi de te noter quelque part ton mot de passe si tu n'utilises pas de gestionnaire de mots de passe!</li>
+            </ol>
+
+            <div class="alert alert-warning" role="alert">
+              <p>
+                <i class="fas fa-exclamation-circle"></i>
+                Ça semble bête à dire... mais n'oublie pas de te connecter à ton compte avant de commencer à travailler! Cela te permettra de sauvegarder gratuitement ton travail (tes <em>sketchs</em>) sur les serveurs de p5.js. Si tu ne le fais pas, tu dois alors télécharger les fichers localement (sur ton ordinateur) et s'il arrive quoique ce soit, tu risques de perdre tout ton travail 😢
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed task" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Etape 2 - Théorie: Déclarons nos variables
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Tous les languages de programmation ou presque utilisent des variables. Techniquement parlant, une variable est un <strong>symbole</strong> qui associe un <strong>nom</strong> à une <strong>valeur</strong>.</p>
+            <p>Plus concrètement, une variable sert à stocker dans la mémoire de l'ordinateur des valeurs pour pouvoir les réutiliser plus tard.</p>
+            <p>Voici un exemple en JavaScript:</p>
+            <pre class="line-numbers"><code class="language-js">
+              let age = 13;
+              const name = "Huguette";
+              var phoneNumber = "+32 495 99 99 99";
+            </code></pre>
+            <p>Dans cet exemple, on a déclaré trois variables: <code class="language-js">age</code>, <code class="language-js">name</code> et <code class="language-js">phoneNumber</code>. On leur a assigné des valeurs différentes. La valeur de <code class="language-js">age</code> est le nombre <code class="language-js">13</code>, la valeur de <code class="language-js">name</code> est <code class="language-js">"Huguette"</code>, etc.<p>
+            <p>Parfois, tu verras qu'on <strong>déclare</strong> une variable et qu'on lui <strong>assigne</strong> ou <strong>affecte</strong> une valeur en deux temps:</p>
+            <pre class="line-numbers">
+              <code class="language-js">
+                let age; // déclaration de la variable age
+                age = 23; // on assigne la valeur 23 à la variable
+              </code>
+            </pre>
+
+            <div class="alert alert-warning" role="alert">
+              <p>
+                <i class="fas fa-exclamation-circle"></i>
+                Tout ce qui suit les deux barres obliques <strong>//</strong> ce sont des <strong>commentaires</strong>. L'ordinateur sait que ce n'est pas du code à exécuter. Les commentaires sont là pour aider les développeurs à expliquer leur code en language humain (en français, en anglais, etc.).
+              </p>
+            </div>
+
+            <p><code class="language-js">let</code>, <code class="language-js">const</code> et <code class="language-js">var</code> sont des mots-clés qui permettent de déclarer une variable en JavaScript. Une fois que la variable a été déclarée, on peut la réutiliser dans le reste du code sans le mot-clé.</p>
+
+            <p>Les trois mots-clés créent des variables qui ont des propriétés un peu différentes. On verra cela plus tard.</p>
+
+            <p>Finalement, les variables en JavaScript respectent une <strong>convention de nommage</strong> (<em>naming convention</em>). On ne peut pas écrire n'importe comment les noms de nos variables!</p>
+
+            <p>Déjà, le nom des variables est en anglais 🇬🇧 🇺🇸. En fait, tout notre code devrait être en anglais. Même les commentaires... Eh oui, l'anglais c'est la langue de programmation par excellence!</p>
+
+            <div class="alert alert-warning" role="alert">
+              <p>
+                <i class="far fa-lightbulb"></i>
+                Il existe de chouettes essais pour créer des languages de programmation en d'autres langues que l'anglais, voire même d'autres alphabets que l'alphabet latin. Comme par exemple en <a href="https://www.youtube.com/watch?v=77KAHPZUR8g">arabe</a>.
+              </p>
+            </div>
+
+            <p>Note ensuite la syntaxe de la variable <code class="language-js">phoneNumber</code>. En <strong>JavaScript</strong>, quand une variable est faite de plusieurs mots, le premier mot est en minuscules, tandis que la première lettre des mots suivants est en majuscule. Cette syntaxe s'appelle <code class="language-js">lowerCamelCase</code>... car elle rappelle les bosses d'un chameau.   <img src="images/camel.png" alt="Camel" height="70rem"></p>
+          <p>D'autres syntaxes existent. En <strong>Ruby</strong>, par exemple, on utilise la syntaxe <code class="language-js">snake_case</code>. <img src="images/snake.webp" alt="Snake" height="50rem"> Notre variable s'écrirait alors <code class="language-js">phone_number</code>.</p>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed task" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Etape 3 - Repérer les variables
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            <p><a href="https://editor.p5js.org/Margotte/sketches/QEm2xKV3p" target="_blank">Clique sur ce lien</a> qui te mènera à un projet en p5.js:</p>
+
+            <img class="flexgif img-shadow mb-3" src="images/step3.png" alt="">
+
+            <p>Dans ce projet, une développeuse en feu a déclaré plein de variables. Mais à prime abord, il n'est pas évident de deviner la valeur de chacune des variables.</p>
+
+            <p>En JavaScript, on peut utiliser une fonction pour inspecter 🔎 les variables: <code class="language-js">console.log()</code></p>
+            <p>Entre les parenthèses du <code class="language-js">.log()</code>, tu places la variable de ton choix. Par exemple:</p>
+
+            <pre class="line-numbers">
+              <code class="language-js">
+                let age = 22 + 5;
+                console.log(age);
+              </code>
+            </pre>
+
+            <p>La valeur de la variable apparaîtra dans la <strong>console</strong>, qui se situe au bas de ton code dans l'éditeur p5.js:</p>
+            <img class="flexgif img-shadow mb-3" src="images/step3b.png" alt="">
+
+            <p>Vérifier la valeur de nos variables est <strong>ESSENTIEL</strong> pour tous les développeurs. Lorsque tu codes, tu devrais constamment faire des <code class="language-js">console.log()</code></p>
+
+            <p>D'ailleurs, c'est ce que tu vas faire avec le drôle de code du projet "Variables en folie". Mais avant cela, combien y a-t-il de variables déclarées dans ce code? Envoie ta réponse en privée dans le chat de Zoom à un des animateurs du Techies Lab.</p>
+
+
+            <p>Ajoute maintenant l'instruction <code class="language-js">console.log()</code> autant de fois dans le code que tu veux pour trouver la valeur des variables suivantes:</p>
+            <ul>
+              <li>primes</li>
+              <li>age</li>
+              <li>coaches</li>
+              <li>adjective</li>
+              <li>noun</li>
+              <li>words</li>
+            </ul>
+
+            <p>Pour lancer le programme et voir le résultat de tes <code class="language-js">console.log()</code>, rien de plus facile: il faut cliquer sur le bouton "Play".</p>
+            <img class="img-shadow mb-3" src="images/step4.png" alt="">
+
+            <p>Alors? Quel est le message secret de ce code? Encore une fois, envoie la réponse en privé à un des animateurs du Techies Lab.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed task" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Etape 4 - Affiche le message secret
+            </button>
+          </h2>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <p>Maintenant que tu as découvert le message secret, il est temps de l'afficher! Tu as peut-être noté qu'en bas de notre programme, il y a trois lignes qui sont des commentaires:</p>
+
+            <pre><code class="language-js">
+              // function draw() {
+              //   background(220);
+              // }
+            </code></pre>
+
+            <p>Tu peux enlever les barres obliques une à une pour enlever les commentaires de chaque ligne.</p>
+
+            <p>Ou tu peux le faire avec des raccourcis clavier, comme les pros:</p>
+
+            <img class="img-shadow mb-3" src="images/step4.gif" alt="">
+
+            <p>Le raccourci pour sélectionner plusieurs lignes de code : <strong>ctrl + l</strong></p>
+            <p>Le raccourci pour commenter (ou décommenter): <strong>ctrl + /</strong></p>
+
+
+            <p>Note que notre canevas (l'espace <strong>Preview</strong>) est devenu gris pâle et a la forme d'un carré.</p>
+            <p>Comment faire pour y ajouter du texte ? Quelle instruction donner à l'ordinateur? Il existe une sorte de dictionnaire de toutes les instructions qui existent dans la librairie P5.js. Ce dictionnaire se trouve à la page <a href="https://p5js.org/reference/">https://p5js.org/reference/</a></p>
+
+            <img class="flexgif img-shadow mb-3" src="images/step5.png" alt="">
+
+            <p>En allant vers le bas de la page, tu verras une section <strong>Typography</strong></p>
+            <img class="img-shadow mb-3" src="images/step5b.png" alt="">
+
+            <p>Clique sur l'instruction <strong>text()</strong>. La page est pas mal longue... et en anglais! Malheureusement, presque tout est en anglais quand il s'agit de code. Alors il vaut mieux s'habituer tout de suite, quite à utiliser un dictionnaire!</p>
+
+            <p>Les plages d'explications commencent toujours avec un exemple, ce qui est super utile pour comprendre comment fonctionne une instruction. Le premier exemple commence avec les lignes suivante:</p>
+
+            <pre><code class="language-js">textSize(32);
+text('word', 10, 30);
+            </code></pre>
+
+            <p>On va les copier et les coller dans la fonction <code class="language-js">draw()</code> de notre code.</p>
+
+            <p>Maintenant, au lieu du mot 'word', affiche le message secret!</p>
+
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://techieslab.be/"><i class="fas fa-globe"></i></i></a>
+    <a href="https://www.facebook.com/TechiesLabBrussels"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/TechiesLab"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/3298561-faites-votre-mise-en-page-avec-flexbox#/id/r-3298711" rel="noopener noreferrer" target="_blank" class="alert-link copyright">
+      <i class="far fa-copyright"></i>
+      2020 Techies Lab ASBL. All rights reserved.
+    </a>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="javascript/prism.js"></script>
+<script type="text/javascript" src="javascript/app.js"></script>
+</body>
+</html>
